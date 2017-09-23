@@ -1,14 +1,14 @@
 var c = 0
 
-function print() {
+function printIt() {
     console.log(c)
 }
 
-function plus() {
+function plus(callback) {
     setTimeout(function() {
         c += 1
+        callback()
     }, 1000)
 }
 
-plus()
-print()
+plus(printIt)
